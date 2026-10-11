@@ -2,6 +2,7 @@ List<String> getPassedStudent(Map<String, int> scores) => scores.entries
     .where((entry) => entry.value >= 50)
     .map((scores) => scores.key)
     .toList();
+
 double computeAverage(List<int> scores) {
   if (scores.isEmpty) return 0;
   return scores.reduce((a, b) => a + b) / scores.length;
@@ -24,15 +25,15 @@ void main() {
   ];
   List<String> courses = ["Dart", "Flutter", "Database"];
   for (String course in courses) {
-    List<int> courseScore= [];
+    List<int> courseScore = [];
 
-      for (var student in students) {
+    for (var student in students) {
       if (student.containsKey(course)) {
         courseScore.add(student[course] as int);
       }
     }
     double average = computeAverage(courseScore);
     print('$course Average: ${average.toStringAsFixed(1)}');
+    print(courseScore);
   }
-  }
-
+}
