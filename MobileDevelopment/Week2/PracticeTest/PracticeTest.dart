@@ -4,16 +4,16 @@ class Patient {
   final int _age;
   final bool urgent;
   Patient(this._patientId, this._name, this._age, [this.urgent = false]);
+// getter
   String get patientId => _patientId;
   String get name => _name;
   int get age => _age;
 }
-
 class Hospital {
   // a list of patients
   final List<Patient> _patients;
   Hospital(this._patients);
-  // constructor
+
   List<Patient> getUrgentPatients() {
     return _patients.where((patient) => patient.urgent).toList();
   }
