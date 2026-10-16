@@ -45,7 +45,7 @@ class Bank {
 }
 
 void main() {
-  Bank myBank = Bank(name: "CADT Bank");
+  Bank myBank = Bank(name: "CADT");
   BankAccount ronanAccount = myBank.createAccount("100", 'Ronan');
 
   print(ronanAccount.balance); // Balance: $0
