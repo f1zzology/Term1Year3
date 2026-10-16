@@ -10,7 +10,7 @@ class MyDuration {
   MyDuration.fromSeconds(int seconds) : this._(seconds * 1000);
 
   MyDuration operator +(MyDuration other) {
-    return MyDuration._(_milliseconds + other._milliseconds);
+    return MyDuration._(this._milliseconds + other._milliseconds);
   }
 
   bool operator >(MyDuration other) {
@@ -39,8 +39,7 @@ void main() {
   // MyDuration duration3 = MyDuration.fromSeconds(50);
   print(duration1 + duration2); // 3 hours, 45 minutes, 0 seconds
   print(duration1 > duration2); //true
-    print(duration1 + duration2);
-
+  print(duration1 + duration2);
 
   try {
     print(duration2 - duration1); // This will throw an exception

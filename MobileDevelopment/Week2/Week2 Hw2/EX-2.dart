@@ -61,7 +61,7 @@ void main() {
   }
 
   try {
-    myBank.createAccount("101", 'Honlgy'); // This will throw an exception
+    myBank.createAccount("100", 'Honlgy'); // This will throw an exception
   } catch (e) {
     print(e); // Output: Account with ID 100 already exists!
   }

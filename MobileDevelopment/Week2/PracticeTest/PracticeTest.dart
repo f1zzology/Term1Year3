@@ -14,13 +14,11 @@ class Hospital {
   final List<Patient> _patients;
   Hospital(this._patients);
 
-  List<Patient> getUrgentPatients() {
+  List<Patient> get UrgentPatients {
     return _patients.where((patient) => patient.urgent).toList();
   }
-  List<Patient> getUrgentPatientsFrom60() {
-    return _patients
-        .where((patient) => patient.urgent && patient.age >= 60)
-        .toList();
+  List<Patient> get UrgentPatientsFrom60 {
+    return _patients.where((patient) => patient.urgent && patient.age >= 60).toList();
   }
 }
 
@@ -34,11 +32,11 @@ void main() {
   var hospital = Hospital([patient1, patient2, patient3, patient4]);
   // 3. print the two results
   print("urgent patients");
-  for (final patient in hospital.getUrgentPatients()) {
+  for (final patient in hospital.UrgentPatients) {
     print("${patient.name}");
   }
     print("urgent patients aged 60 or more");
-  for (final patient in hospital.getUrgentPatientsFrom60()) {
+  for (final patient in hospital.UrgentPatientsFrom60) {
     print("${patient.name}");
   }
 }
