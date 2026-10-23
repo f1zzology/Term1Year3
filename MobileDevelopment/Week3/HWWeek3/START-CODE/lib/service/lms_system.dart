@@ -127,8 +127,8 @@ class LmsSystem {
       }) {
     bool alreadyHaveResult = results.any((result) =>
         result.studentId == studentId && result.courseId == courseId);
-    if (alreadyHaveResult) {
-      throw Exception("a result already exist for student $studentId"
+    if (!alreadyHaveResult) {
+      throw Exception("no result exists for student $studentId "
           'in course $courseId');
     }
     results.removeWhere((result) => result.studentId == studentId && result.courseId == courseId);
